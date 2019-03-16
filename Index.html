@@ -36,9 +36,9 @@ textarea {width:100%;}
 
 function changeEventHandler(event) {
     
- viz.renderSVGElement(document.getElementById("dotText").value)
+ viz.renderSVGElement($('#dotText').value)
     .then(function(element) {
-      document.getElementById("render").replaceWith(element);
+      $('#render').replaceWith(element);
     });
 }
 	</script>
