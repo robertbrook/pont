@@ -1,7 +1,7 @@
 
 <html><head>
   <meta charset="utf-8">
-  <title>viz</title>
+  <title>pont</title>
   <script src="https://unpkg.com/viz.js@2.1.2/viz.js"></script>
 	
   <script src="https://unpkg.com/viz.js@2.1.2/full.render.js"></script>
@@ -39,21 +39,13 @@
 },false);
 
 function changeEventHandler(event) {
-    // You can use “this” to refer to the selected element.
-    // alert(this.value);
-    // alert('You like ' + event.target.value + ' ice cream.'); 
     
     viz.renderSVGElement(document.getElementById("dotText").value)
     .then(function(element) {
       document.body.appendChild(element);
     });
 }
-
-    
-
-    
-
-  </script>
+	</script>
 
 
 </body></html>
