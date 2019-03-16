@@ -29,17 +29,14 @@ textarea {width:100%;}
   <script>
   
   var viz = new Viz();
-  
-  document.addEventListener('DOMContentLoaded',function() {
-    document.querySelector('textarea[id="dotText"]').onchange=changeEventHandler;
-},false);
 
-function changeEventHandler(event) {
+$( '#dotText' ).change(function() {
     
  viz.renderSVGElement($('#dotText').value)
     .then(function(element) {
       $('#render').replaceWith(element);
     });
+
 }
 	</script>
 
