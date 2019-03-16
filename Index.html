@@ -1,0 +1,51 @@
+
+<html><head>
+  <meta charset="utf-8">
+  <title>viz</title>
+  <script src="https://unpkg.com/viz.js@2.1.2/viz.js"></script>
+  <script src="https://unpkg.com/viz.js@2.1.2/full.render.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+  <style>
+  body {
+	font-family: system-ui;
+		padding:1rem;
+		max-width:32rem;
+    margin:1rem auto;
+		}
+		textarea {
+			width: 90%;
+		}
+		</style>
+</head>
+<body>
+	
+	<textarea id="dotText">digraph { hello -> world; }</textarea>
+<br>
+  <script>
+  
+  var viz = new Viz();
+  
+  document.addEventListener('DOMContentLoaded',function() {
+    document.querySelector('textarea[id="dotText"]').onchange=changeEventHandler;
+},false);
+
+function changeEventHandler(event) {
+    // You can use “this” to refer to the selected element.
+    // alert(this.value);
+    // alert('You like ' + event.target.value + ' ice cream.'); 
+    
+    viz.renderSVGElement(document.getElementById("dotText").value)
+    .then(function(element) {
+      document.body.appendChild(element);
+    });
+}
+
+    
+
+    
+
+  </script>
+
+
+</body></html>
